@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>会动的球</title>
+		<style type="text/css">
+			#box{
+				/*margin: auto;*/
+				height: 400px;
+				width: 1264px;
+				border: solid 1px red;
+				position: relative;background-image: url(img/58a1411a6c486.jpg);
+			}
+			#ball1{
+				width: 50px;
+				height: 50px;
+				border-radius: 25px;
+				background-color: lawngreen;
+				position: absolute;
+				left: 0;
+			}
+			
+		
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<div id="ball1" style="top: 0;">
+			
+		</div>
+		<div id="ball2" style="animation: 70px;">
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			var ball1 = document.getElementById("ball1")
+			var speedx = 2
+			var speedy = 2
+			
+			setInterval(function(){
+				ball1.style.left = ball1.offsetLeft + speedx + "px"
+				ball1.style.top = ball1.offsetTop + speedy + "px"
+				
+				if (ball1.offsetTop >= 400 - 50 || ball1.offsetTop <= 0){
+					speedy *= -1
+				}
+				if (ball1.offsetLeft >= 1264 - 50 || ball1.offsetLeft <= 0){
+					speedx *= -1
+				}
+			}, 5)
+		</script>
+	</body>
+</html>
